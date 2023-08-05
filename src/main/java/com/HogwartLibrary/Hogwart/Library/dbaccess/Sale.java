@@ -9,6 +9,8 @@ private String username;
 private int book_id;
 private int quantity;
 private String title;
+private String status;
+
 public String getUsername() {
 	return username;
 }
@@ -56,5 +58,11 @@ public float getTotal_amount() {
 }
 public void setTotal_amount(float total_amount) {
 	this.total_amount = total_amount;
+}
+public String getStatus() {
+	return status;
+}
+public void setStatus(String status) {
+	this.status = status;
 }
 }

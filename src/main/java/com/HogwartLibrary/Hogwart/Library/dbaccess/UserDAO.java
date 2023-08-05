@@ -106,7 +106,7 @@ public class UserDAO {
 		Connection conn = null;
 		try {
 			conn = DBConnection.getConnection();
-			String sqlStr = "SELECT * FROM user";
+			String sqlStr = "SELECT * FROM user where role='member'";
 			PreparedStatement pstmt = conn.prepareStatement(sqlStr);
 			ResultSet rs = pstmt.executeQuery();
 			while(rs.next()) {

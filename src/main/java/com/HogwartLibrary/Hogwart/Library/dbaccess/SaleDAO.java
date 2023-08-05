@@ -38,5 +38,20 @@ public class SaleDAO {
 		return SaleList;
 		
 	}
-
+	 public void updateOrderStatus(int order_id, String status) throws SQLException {
+	        Connection conn = null;
+	        try {
+	            conn = DBConnection.getConnection();
+	            String sqlStr = "UPDATE orders SET status = ? WHERE order_id = ?";
+	            PreparedStatement pstmt = conn.prepareStatement(sqlStr);
+	            pstmt.setString(1, status);
+	            pstmt.setInt(2, order_id);
+	            pstmt.executeUpdate();
+	        } catch (Exception e) {
+	            System.out.print("............SaleDAO:" + e);
+	        } finally {
+	            conn.close();
+	        }
+	    }
+	
 }
